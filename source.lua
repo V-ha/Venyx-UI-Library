@@ -500,7 +500,7 @@ do
 	
 	-- new modules
 	
-	function library:Notify(title, text, callback)
+	function library:Notify(title, text)
 	
 		-- overwrite last notification
 		if self.activeNotification then
@@ -638,11 +638,6 @@ do
 			if not active then 
 				return
 			end
-			
-			if callback then
-				callback(true)
-			end
-			
 			close()
 		end)
 		
@@ -651,11 +646,6 @@ do
 			if not active then 
 				return
 			end
-			
-			if callback then
-				callback(false)
-			end
-			
 			close()
 		end)
 	end
@@ -2168,5 +2158,5 @@ do
 	end
 end
 
-print("VHA was here!")
+print("[ZEN-TECH]")
 return library
