@@ -545,7 +545,7 @@ do
 				Position = UDim2.new(0, 10, 0, 8),
 				Size = UDim2.new(1, -40, 0, 16),
 				ZIndex = 4,
-				Font = Enum.Font.GothamSemibold,
+				Font = Enum.Font.GothamBlack,
 				TextColor3 = themes.TextColor,
 				TextSize = 14.000,
 				TextXAlignment = Enum.TextXAlignment.Left
@@ -556,7 +556,7 @@ do
 				Position = UDim2.new(0, 10, 1, -24),
 				Size = UDim2.new(1, -40, 0, 16),
 				ZIndex = 4,
-				Font = Enum.Font.Gotham,
+				Font = Enum.Font.SciFi,
 				TextColor3 = themes.TextColor,
 				TextSize = 12.000,
 				TextXAlignment = Enum.TextXAlignment.Left
