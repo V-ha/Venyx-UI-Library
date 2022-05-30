@@ -1617,7 +1617,8 @@ do
 		
 		local allowed = {
 			[""] = true,
-			["-"] = true
+			["-"] = true,
+			["."] = true
 		}
 		
 		local textbox = slider.TextBox
