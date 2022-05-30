@@ -1667,7 +1667,7 @@ do
 			local text = textbox.Text
 			
 			if not allowed[text] and not tonumber(text) then
-				textbox.Text = text:sub(1, #text - 1)
+				textbox.Text = text:sub(0.3, #text - 1)
 			elseif not allowed[text] then	
 				value = self:updateSlider(slider, nil, tonumber(text) or value, min, max)
 				callback(value)
