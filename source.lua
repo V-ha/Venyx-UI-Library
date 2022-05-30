@@ -322,7 +322,7 @@ do
 				Position = UDim2.new(0, 40, 0.5, 0),
 				Size = UDim2.new(0, 76, 1, 0),
 				ZIndex = 3,
-				Font = Enum.Font.Gotham,
+				Font = Enum.Font.GothamBlack,
 				Text = title,
 				TextColor3 = themes.TextColor,
 				TextSize = 12,
