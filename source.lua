@@ -219,7 +219,7 @@ do
 			utility:Create("ImageLabel", {
 				Name = "Main",
 				BackgroundTransparency = 1,
-				Position = UDim2.new(0, 1464, 0, 1054),
+				Position = UDim2.new(0, 1464, 0, 1024),
 				Size = UDim2.new(0, 430, 0, 380),
 				Image = "rbxassetid://4641149554",
 				ImageColor3 = themes.Background,
