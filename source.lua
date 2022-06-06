@@ -26,7 +26,7 @@ local themes = {
     	Background = Color3.fromRGB(218, 218, 218),
         Glow = Color3.fromRGB(255, 255, 255),
         Accent = Color3.fromRGB(214, 214, 214),
-        LightContrast = Color3.fromRGB(193, 193, 193),
+        LightContrast = Color3.fromRGB(201, 201, 201),
         DarkContrast = Color3.fromRGB(214, 214, 214),  
         TextColor = Color3.fromRGB(0, 0, 0)
     } -- [Frost UI]
