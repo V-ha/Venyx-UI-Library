@@ -23,7 +23,7 @@ local objects = {}
     --} -- [Original UI]
     
 local themes = {
-    	Background = Color3.fromRGB(233, 233, 233),
+    	Background = Color3.fromRGB(218, 218, 218),
         Glow = Color3.fromRGB(255, 255, 255),
         Accent = Color3.fromRGB(214, 214, 214),
         LightContrast = Color3.fromRGB(193, 193, 193),
