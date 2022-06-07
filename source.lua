@@ -409,7 +409,7 @@ do
 					Text = title,
 					TextColor3 = themes.TextColor,
 					TextSize = 12,
-					TextXAlignment = Enum.TextXAlignment.Left,
+					TextXAlignment = Enum.TextXAlignment.Center,
 					TextTransparency = 1
 				}),
 				utility:Create("UIListLayout", {
@@ -1805,7 +1805,7 @@ do
 		if toggle then
 			-- page button
 			button.Title.TextTransparency = 0
-			button.Title.Font = Enum.Font.GothamSemibold
+			button.Title.Font = Enum.Font.GothamBlack
 			
 			if button:FindFirstChild("Icon") then
 				button.Icon.ImageTransparency = 0
@@ -1867,7 +1867,7 @@ do
 			page:Resize(true)
 		else
 			-- page button
-			button.Title.Font = Enum.Font.Gotham
+			button.Title.Font = Enum.Font.GothamBlack
 			button.Title.TextTransparency = 0.65
 			
 			if button:FindFirstChild("Icon") then
