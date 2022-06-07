@@ -13,8 +13,6 @@ local utility = {}
 
 -- themes
 local objects = {}
-
--- hwid
 --local themes = {
     	--Background = Color3.fromRGB(218, 218, 218),
         --Glow = Color3.fromRGB(0, 0, 0),
