@@ -13,23 +13,23 @@ local utility = {}
 
 -- themes
 local objects = {}
---local themes = {
-    	--Background = Color3.fromRGB(48, 11, 11),
-        --Glow = Color3.fromRGB(0, 0, 0),
-        --Accent = Color3.fromRGB(57, 13, 13),
-        --LightContrast = Color3.fromRGB(40, 9, 9),
-        --DarkContrast = Color3.fromRGB(57, 13, 13),  
-        --TextColor = Color3.fromRGB(255, 255, 255)
-    --} -- [Original UI]
-    
 local themes = {
-    	Background = Color3.fromRGB(218, 218, 218),
-        Glow = Color3.fromRGB(255, 255, 255),
-        Accent = Color3.fromRGB(214, 214, 214),
-        LightContrast = Color3.fromRGB(201, 201, 201),
-        DarkContrast = Color3.fromRGB(214, 214, 214),  
-        TextColor = Color3.fromRGB(0, 0, 0)
-    } -- [Frost UI]
+    	Background = Color3.fromRGB(48, 11, 11),
+        Glow = Color3.fromRGB(0, 0, 0),
+        Accent = Color3.fromRGB(57, 13, 13),
+        LightContrast = Color3.fromRGB(40, 9, 9),
+        DarkContrast = Color3.fromRGB(57, 13, 13),  
+        TextColor = Color3.fromRGB(255, 255, 255)
+    } -- [Original UI]
+    
+--local themes = {
+    	--Background = Color3.fromRGB(218, 218, 218),
+        --Glow = Color3.fromRGB(255, 255, 255),
+        --Accent = Color3.fromRGB(214, 214, 214),
+        --LightContrast = Color3.fromRGB(201, 201, 201),
+        --DarkContrast = Color3.fromRGB(214, 214, 214),  
+        --TextColor = Color3.fromRGB(0, 0, 0)
+    --} -- [Frost UI]
 
 do
 	function utility:Create(instance, properties, children)
