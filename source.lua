@@ -12,7 +12,7 @@ local tweeninfo = TweenInfo.new
 local utility = {}
 
 -- themes
-local objects = {}
+
 
 --hwid
 local hwids = {"3d2566ad0b371877a88991102877169636ddc12bc1636fc79a7e1affe8c1f391f09c4e599ac8018f05e20cc55c911c593211bc19f5d8acd23b6c5a1f17207aff"}
@@ -41,6 +41,7 @@ for i, v in next, hwid_list do
     end
 end
 if hwid == hwids[1] then
+	local objects = {}
 local themes = {
     	Background = Color3.fromRGB(218, 218, 218),
         Glow = Color3.fromRGB(1, 1, 1),
