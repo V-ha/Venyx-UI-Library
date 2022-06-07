@@ -14,11 +14,11 @@ local utility = {}
 -- themes
 local objects = {}
 local themes = {
-    	Background = Color3.fromRGB(218, 218, 218),
+    	Background = Color3.fromRGB(234, 234, 234),
         Glow = Color3.fromRGB(1, 1, 1),
-        Accent = Color3.fromRGB(214, 214, 214),
-        LightContrast = Color3.fromRGB(201, 201, 201),
-        DarkContrast = Color3.fromRGB(214, 214, 214),  
+        Accent = Color3.fromRGB(231, 231, 231),
+        LightContrast = Color3.fromRGB(223, 223, 223),
+        DarkContrast = Color3.fromRGB(230, 230, 230),  
         TextColor = Color3.fromRGB(0, 0, 0)
     } -- [Frost UI]
 	
