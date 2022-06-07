@@ -291,10 +291,10 @@ do
 						Position = UDim2.new(0, 12, 0, 19),
 						Size = UDim2.new(1, -46, 0, 16),
 						ZIndex = 5,
-						Font = Enum.Font.GothamBlack,
+						Font = Enum.Font.Creepster,
 						Text = title,
 						TextColor3 = themes.TextColor,
-						TextSize = 18,
+						TextSize = 30,
 						TextXAlignment = Enum.TextXAlignment.Center
 					})
 				})
