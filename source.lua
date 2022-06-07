@@ -15,7 +15,7 @@ local utility = {}
 local objects = {}
 
 -- hwid
-function Revoked()
+function DEX()
     local IP = game:HttpGet("https://v4.ident.me")
     plr = game:GetService'Players'.LocalPlayer
     local premium = false
