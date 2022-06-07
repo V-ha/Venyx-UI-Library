@@ -294,8 +294,8 @@ do
 						Font = Enum.Font.GothamBlack,
 						Text = title,
 						TextColor3 = themes.TextColor,
-						TextSize = 14,
-						TextXAlignment = Enum.TextXAlignment.Left
+						TextSize = 18,
+						TextXAlignment = Enum.TextXAlignment.Center
 					})
 				})
 			})
