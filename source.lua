@@ -13,14 +13,14 @@ local utility = {}
 
 -- themes
 local objects = {}
-local themes = {
-    	Background = Color3.fromRGB(234, 234, 234),
-        Glow = Color3.fromRGB(1, 1, 1),
-        Accent = Color3.fromRGB(231, 231, 231),
-        LightContrast = Color3.fromRGB(223, 223, 223),
-        DarkContrast = Color3.fromRGB(230, 230, 230),  
-        TextColor = Color3.fromRGB(0, 0, 0)
-    } -- [Frost UI]
+--local themes = {
+    	--Background = Color3.fromRGB(234, 234, 234),
+        --Glow = Color3.fromRGB(1, 1, 1),
+        --Accent = Color3.fromRGB(231, 231, 231),
+        --LightContrast = Color3.fromRGB(223, 223, 223),
+        --DarkContrast = Color3.fromRGB(230, 230, 230),  
+        --TextColor = Color3.fromRGB(0, 0, 0)
+--} -- [Frost UI]
 	
 	
 --local themes = {
@@ -30,7 +30,16 @@ local themes = {
         --LightContrast = Color3.fromRGB(40, 9, 9),
         --DarkContrast = Color3.fromRGB(57, 13, 13),  
         --TextColor = Color3.fromRGB(255, 255, 255)
-    --} -- [Original UI]
+--} -- [Original UI]
+
+local themes = {
+   Background = Color3.fromRGB(18, 21, 24),
+   Glow = Color3.fromRGB(1, 1, 1),
+   Accent = Color3.fromRGB(20, 23, 26),
+   LightContrast = Color3.fromRGB(14, 17, 20),
+   DarkContrast = Color3.fromRGB(20, 23, 26),  
+   TextColor = Color3.fromRGB(255, 255, 255)
+} -- [CD2 UI]
 
 do
 	function utility:Create(instance, properties, children)
