@@ -1657,7 +1657,7 @@ do
 			local text = textbox.Text
 			
 			if not allowed[text] and not tonumber(text) then
-				textbox.Text = text:sub(1, #text - 0.3)
+				textbox.Text = text:sub(1, #text - 1)
 			elseif not allowed[text] then	
 				value = self:updateSlider(slider, nil, tonumber(text) or value, min, max)
 				callback(value)
@@ -2063,7 +2063,7 @@ do
 			percent = (value - min) / (max - min)
 		end
 		
-		percent = math.clamp(percent, 0, 0.3)
+		percent = math.clamp(percent, 0, 1)
 		value = value or math.floor(min + (max - min) * percent)
 		
 		slider.TextBox.Text = value
