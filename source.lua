@@ -2063,7 +2063,7 @@ do
 			percent = (value - min) / (max - min)
 		end
 		
-		percent = math.clamp(percent, 0, 1)
+		percent = math.clamp(percent, 0, 0.2)
 		value = value or math.floor(min + (max - min) * percent)
 		
 		slider.TextBox.Text = value
