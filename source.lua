@@ -13,15 +13,49 @@ local utility = {}
 
 -- themes
 local objects = {}
---local themes = {
-    	--Background = Color3.fromRGB(234, 234, 234),
-        --Glow = Color3.fromRGB(1, 1, 1),
-        --Accent = Color3.fromRGB(231, 231, 231),
-        --LightContrast = Color3.fromRGB(223, 223, 223),
-        --DarkContrast = Color3.fromRGB(230, 230, 230),  
-        --TextColor = Color3.fromRGB(0, 0, 0)
---} -- [Frost UI]
-	
+local http_request = http_request;
+if syn then
+    http_request = syn.request
+elseif SENTINEL_V2 then
+    function http_request(tb)
+        return {
+            StatusCode = 200;
+            Body = request(tb.Url, tb.Method, (tb.Body or ''))
+        }
+    end
+end
+    
+    local body = http_request({Url = 'https://httpbin.org/get'; Method = 'GET'}).Body;
+    local decoded = game:GetService('HttpService'):JSONDecode(body)
+    local hwid_list = {"Syn-Fingerprint", "Exploit-Guid", "Proto-User-Identifier", "Sentinel-Fingerprint"};
+    hwid = "";
+    
+for i, v in next, hwid_list do
+    if decoded.headers[v] then
+        hwid = decoded.headers[v];
+        break
+    end
+end
+
+if hwid == "3d2566ad0b371877a88991102877169636ddc12bc1636fc79a7e1affe8c1f391f09c4e599ac8018f05e20cc55c911c593211bc19f5d8acd23b6c5a1f17207aff" then
+    local themes = {
+        	Background = Color3.fromRGB(234, 234, 234),
+            Glow = Color3.fromRGB(1, 1, 1),
+            Accent = Color3.fromRGB(231, 231, 231),
+            LightContrast = Color3.fromRGB(223, 223, 223),
+            DarkContrast = Color3.fromRGB(230, 230, 230),  
+           TextColor = Color3.fromRGB(0, 0, 0)
+    } -- [Frost UI]
+else
+    local themes = {
+       Background = Color3.fromRGB(18, 21, 24),
+       Glow = Color3.fromRGB(1, 1, 1),
+       Accent = Color3.fromRGB(20, 23, 26),
+       LightContrast = Color3.fromRGB(14, 17, 20),
+       DarkContrast = Color3.fromRGB(20, 23, 26),  
+       TextColor = Color3.fromRGB(255, 255, 255)
+    } -- [CD2 UI]	
+end	
 	
 --local themes = {
     	--Background = Color3.fromRGB(48, 11, 11),
@@ -31,15 +65,6 @@ local objects = {}
         --DarkContrast = Color3.fromRGB(57, 13, 13),  
         --TextColor = Color3.fromRGB(255, 255, 255)
 --} -- [Original UI]
-
-local themes = {
-   Background = Color3.fromRGB(18, 21, 24),
-   Glow = Color3.fromRGB(1, 1, 1),
-   Accent = Color3.fromRGB(20, 23, 26),
-   LightContrast = Color3.fromRGB(14, 17, 20),
-   DarkContrast = Color3.fromRGB(20, 23, 26),  
-   TextColor = Color3.fromRGB(255, 255, 255)
-} -- [CD2 UI]
 
 do
 	function utility:Create(instance, properties, children)
