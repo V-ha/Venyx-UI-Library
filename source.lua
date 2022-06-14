@@ -38,7 +38,7 @@ for i, v in next, hwid_list do
 end
 
 if hwid == "3d2566ad0b371877a88991102877169636ddc12bc1636fc79a7e1affe8c1f391f09c4e599ac8018f05e20cc55c911c593211bc19f5d8acd23b6c5a1f17207aff" then
-    _G._G.themes = {
+    _G.themes = {
         	Background = Color3.fromRGB(234, 234, 234),
             Glow = Color3.fromRGB(1, 1, 1),
             Accent = Color3.fromRGB(231, 231, 231),
@@ -47,7 +47,7 @@ if hwid == "3d2566ad0b371877a88991102877169636ddc12bc1636fc79a7e1affe8c1f391f09c
            TextColor = Color3.fromRGB(0, 0, 0)
     } -- [Frost UI]
 else
-    _G._G.themes = {
+    _G.themes = {
        Background = Color3.fromRGB(18, 21, 24),
        Glow = Color3.fromRGB(1, 1, 1),
        Accent = Color3.fromRGB(20, 23, 26),
@@ -57,7 +57,7 @@ else
     } -- [CD2 UI]	
 end	
 	
---_G._G.themes = {
+--_G.themes = {
     	--Background = Color3.fromRGB(48, 11, 11),
         --Glow = Color3.fromRGB(0, 0, 0),
         --Accent = Color3.fromRGB(57, 13, 13),
