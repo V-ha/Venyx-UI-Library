@@ -40,7 +40,7 @@ for i, v in next, hwid_list do
     end
 end
 
-if hwid == "111" and _G.CustomDuelsInterface == false then
+if hwid == "3d2566ad0b371877a88991102877169636ddc12bc1636fc79a7e1affe8c1f391f09c4e599ac8018f05e20cc55c911c593211bc19f5d8acd23b6c5a1f17207aff" and _G.CustomDuelsInterface == false then
     _G.themes = {
         	Background = Color3.fromRGB(234, 234, 234),
             Glow = Color3.fromRGB(1, 1, 1),
