@@ -40,7 +40,7 @@ for i, v in next, hwid_list do
     end
 end
 
-if hwid == "3d2566ad0b371877a88991102877169636ddc12bc1636fc79a7e1affe8c1f391f09c4e599ac8018f05e20cc55c911c593211bc19f5d8acd23b6c5a1f17207aff" then
+if hwid == "111" then
     _G.themes = {
         	Background = Color3.fromRGB(234, 234, 234),
             Glow = Color3.fromRGB(1, 1, 1),
@@ -49,25 +49,25 @@ if hwid == "3d2566ad0b371877a88991102877169636ddc12bc1636fc79a7e1affe8c1f391f09c
             DarkContrast = Color3.fromRGB(230, 230, 230),  
            TextColor = Color3.fromRGB(0, 0, 0)
     } -- [Frost UI]
+elseif _G.CustomDuelsInterface == true then
+    _G.themes = {
+            Background = Color3.fromRGB(18, 21, 24),
+            Glow = Color3.fromRGB(1, 1, 1),
+            Accent = Color3.fromRGB(20, 23, 26),
+            LightContrast = Color3.fromRGB(14, 17, 20),
+            DarkContrast = Color3.fromRGB(20, 23, 26),  
+            TextColor = Color3.fromRGB(255, 255, 255)
+    } -- [CD2 UI]
 else
     _G.themes = {
-       Background = Color3.fromRGB(18, 21, 24),
-       Glow = Color3.fromRGB(1, 1, 1),
-       Accent = Color3.fromRGB(20, 23, 26),
-       LightContrast = Color3.fromRGB(14, 17, 20),
-       DarkContrast = Color3.fromRGB(20, 23, 26),  
-       TextColor = Color3.fromRGB(255, 255, 255)
-    } -- [CD2 UI]	
+        	Background = Color3.fromRGB(48, 11, 11),
+            Glow = Color3.fromRGB(0, 0, 0),
+            Accent = Color3.fromRGB(57, 13, 13),
+            LightContrast = Color3.fromRGB(40, 9, 9),
+            DarkContrast = Color3.fromRGB(57, 13, 13),  
+            TextColor = Color3.fromRGB(255, 255, 255)
+    } -- [Original UI]	
 end	
-	
---_G.themes = {
-    	--Background = Color3.fromRGB(48, 11, 11),
-        --Glow = Color3.fromRGB(0, 0, 0),
-        --Accent = Color3.fromRGB(57, 13, 13),
-        --LightContrast = Color3.fromRGB(40, 9, 9),
-        --DarkContrast = Color3.fromRGB(57, 13, 13),  
-        --TextColor = Color3.fromRGB(255, 255, 255)
---} -- [Original UI]
 
 do
 	function utility:Create(instance, properties, children)
