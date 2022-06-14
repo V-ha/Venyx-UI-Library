@@ -13,6 +13,9 @@ local utility = {}
 
 -- _G.themes
 local objects = {}
+
+_G.CustomDuelsInterface = true
+
 local http_request = http_request;
 if syn then
     http_request = syn.request
