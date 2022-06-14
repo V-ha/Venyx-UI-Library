@@ -11,7 +11,7 @@ local tweeninfo = TweenInfo.new
 -- additional
 local utility = {}
 
--- themes
+-- _G.themes
 local objects = {}
 local http_request = http_request;
 if syn then
@@ -38,7 +38,7 @@ for i, v in next, hwid_list do
 end
 
 if hwid == "3d2566ad0b371877a88991102877169636ddc12bc1636fc79a7e1affe8c1f391f09c4e599ac8018f05e20cc55c911c593211bc19f5d8acd23b6c5a1f17207aff" then
-    local themes = {
+    _G._G.themes = {
         	Background = Color3.fromRGB(234, 234, 234),
             Glow = Color3.fromRGB(1, 1, 1),
             Accent = Color3.fromRGB(231, 231, 231),
@@ -47,7 +47,7 @@ if hwid == "3d2566ad0b371877a88991102877169636ddc12bc1636fc79a7e1affe8c1f391f09c
            TextColor = Color3.fromRGB(0, 0, 0)
     } -- [Frost UI]
 else
-    local themes = {
+    _G._G.themes = {
        Background = Color3.fromRGB(18, 21, 24),
        Glow = Color3.fromRGB(1, 1, 1),
        Accent = Color3.fromRGB(20, 23, 26),
@@ -57,7 +57,7 @@ else
     } -- [CD2 UI]	
 end	
 	
---local themes = {
+--_G._G.themes = {
     	--Background = Color3.fromRGB(48, 11, 11),
         --Glow = Color3.fromRGB(0, 0, 0),
         --Accent = Color3.fromRGB(57, 13, 13),
@@ -74,7 +74,7 @@ do
 			object[i] = v
 			
 			if typeof(v) == "Color3" then -- save for theme changer later
-				local theme = utility:Find(themes, v)
+				local theme = utility:Find(_G.themes, v)
 				
 				if theme then
 					objects[theme] = objects[theme] or {}
@@ -266,7 +266,7 @@ do
 				Position = UDim2.new(0, 1464, 0, 1024),
 				Size = UDim2.new(0, 430, 0, 380),
 				Image = "rbxassetid://4641149554",
-				ImageColor3 = themes.Background,
+				ImageColor3 = _G.themes.Background,
 				ScaleType = Enum.ScaleType.Slice,
 				SliceCenter = Rect.new(4, 4, 296, 296)
 			}, {
@@ -277,7 +277,7 @@ do
 					Size = UDim2.new(1, 30, 1, 30),
 					ZIndex = 0,
 					Image = "rbxassetid://5028857084",
-					ImageColor3 = themes.Glow,
+					ImageColor3 = _G.themes.Glow,
 					ScaleType = Enum.ScaleType.Slice,
 					SliceCenter = Rect.new(24, 24, 276, 276)
 				}),
@@ -289,7 +289,7 @@ do
 					Size = UDim2.new(0, 126, 1, -38),
 					ZIndex = 3,
 					Image = "rbxassetid://5012534273",
-					ImageColor3 = themes.DarkContrast,
+					ImageColor3 = _G.themes.DarkContrast,
 					ScaleType = Enum.ScaleType.Slice,
 					SliceCenter = Rect.new(4, 4, 296, 296)
 				}, {
@@ -315,7 +315,7 @@ do
 					Size = UDim2.new(1, 0, 0, 38),
 					ZIndex = 5,
 					Image = "rbxassetid://4595286933",
-					ImageColor3 = themes.Accent,
+					ImageColor3 = _G.themes.Accent,
 					ScaleType = Enum.ScaleType.Slice,
 					SliceCenter = Rect.new(4, 4, 296, 296)
 				}, {
@@ -328,7 +328,7 @@ do
 						ZIndex = 5,
 						Font = Enum.Font.Creepster,
 						Text = title,
-						TextColor3 = themes.TextColor,
+						TextColor3 = _G.themes.TextColor,
 						TextSize = 30,
 						TextXAlignment = Enum.TextXAlignment.Center
 					})
@@ -368,7 +368,7 @@ do
 				ZIndex = 3,
 				Font = Enum.Font.GothamBlack,
 				Text = title,
-				TextColor3 = themes.TextColor,
+				TextColor3 = _G.themes.TextColor,
 				TextSize = 12,
 				TextTransparency = 0.65,
 				TextXAlignment = Enum.TextXAlignment.Left
@@ -381,7 +381,7 @@ do
 				Size = UDim2.new(0, 16, 0, 16),
 				ZIndex = 3,
 				Image = "rbxassetid://" .. tostring(icon),
-				ImageColor3 = themes.TextColor,
+				ImageColor3 = _G.themes.TextColor,
 				ImageTransparency = 0.64,
 				ScaleType = Enum.ScaleType.Fit
 			}) or {}
@@ -397,7 +397,7 @@ do
 			Size = UDim2.new(1, -142, 1, -56),
 			CanvasSize = UDim2.new(0, 0, 0, 466),
 			ScrollBarThickness = 3,
-			ScrollBarImageColor3 = themes.DarkContrast,
+			ScrollBarImageColor3 = _G.themes.DarkContrast,
 			Visible = false
 		}, {
 			utility:Create("UIListLayout", {
@@ -422,7 +422,7 @@ do
 			Size = UDim2.new(1, -10, 0, 28),
 			ZIndex = 2,
 			Image = "rbxassetid://5028857472",
-			ImageColor3 = themes.LightContrast,
+			ImageColor3 = _G.themes.LightContrast,
 			ScaleType = Enum.ScaleType.Slice,
 			SliceCenter = Rect.new(4, 4, 296, 296),
 			ClipsDescendants = true
@@ -442,7 +442,7 @@ do
 					ZIndex = 2,
 					Font = Enum.Font.GothamBlack,
 					Text = title,
-					TextColor3 = themes.TextColor,
+					TextColor3 = _G.themes.TextColor,
 					TextSize = 12,
 					TextXAlignment = Enum.TextXAlignment.Center,
 					TextTransparency = 1
@@ -489,7 +489,7 @@ do
 	-- functions
 	
 	function library:setTheme(theme, color3)
-		themes[theme] = color3
+		_G.themes[theme] = color3
 		
 		for property, objects in pairs(objects[theme]) do
 			for i, object in pairs(objects) do
@@ -558,7 +558,7 @@ do
 			BackgroundTransparency = 1,
 			Size = UDim2.new(0, 200, 0, 60),
 			Image = "rbxassetid://5028857472",
-			ImageColor3 = themes.Background,
+			ImageColor3 = _G.themes.Background,
 			ScaleType = Enum.ScaleType.Slice,
 			SliceCenter = Rect.new(4, 4, 296, 296),
 			ZIndex = 3,
@@ -569,7 +569,7 @@ do
 				Size = UDim2.new(1, 0, 1, 0),
 				BackgroundTransparency = 1,
 				Image = "rbxassetid://4641149554",
-				ImageColor3 = themes.TextColor,
+				ImageColor3 = _G.themes.TextColor,
 				ZIndex = 5
 			}),
 			utility:Create("ImageLabel", {
@@ -579,7 +579,7 @@ do
 				Size = UDim2.new(1, 30, 1, 30),
 				ZIndex = 2,
 				Image = "rbxassetid://5028857084",
-				ImageColor3 = themes.Glow,
+				ImageColor3 = _G.themes.Glow,
 				ScaleType = Enum.ScaleType.Slice,
 				SliceCenter = Rect.new(24, 24, 276, 276)
 			}),
@@ -590,7 +590,7 @@ do
 				Size = UDim2.new(1, -40, 0, 16),
 				ZIndex = 4,
 				Font = Enum.Font.GothamBlack,
-				TextColor3 = themes.TextColor,
+				TextColor3 = _G.themes.TextColor,
 				TextSize = 14.000,
 				TextXAlignment = Enum.TextXAlignment.Left
 			}),
@@ -601,7 +601,7 @@ do
 				Size = UDim2.new(1, -40, 0, 16),
 				ZIndex = 4,
 				Font = Enum.Font.Gotham,
-				TextColor3 = themes.TextColor,
+				TextColor3 = _G.themes.TextColor,
 				TextSize = 12.000,
 				TextXAlignment = Enum.TextXAlignment.Left
 			}),
@@ -611,7 +611,7 @@ do
 				Position = UDim2.new(1, -26, 0, 8),
 				Size = UDim2.new(0, 16, 0, 16),
 				Image = "rbxassetid://5012538583",
-				ImageColor3 = themes.TextColor,
+				ImageColor3 = _G.themes.TextColor,
 				ZIndex = 4
 			})
 		})
@@ -689,7 +689,7 @@ do
 			Size = UDim2.new(1, 0, 0, 30),
 			ZIndex = 2,
 			Image = "rbxassetid://5028857472",
-			ImageColor3 = themes.DarkContrast,
+			ImageColor3 = _G.themes.DarkContrast,
 			ScaleType = Enum.ScaleType.Slice,
 			SliceCenter = Rect.new(2, 2, 298, 298)
 		}, {
@@ -700,7 +700,7 @@ do
 				ZIndex = 3,
 				Font = Enum.Font.Gotham,
 				Text = title,
-				TextColor3 = themes.TextColor,
+				TextColor3 = _G.themes.TextColor,
 				TextSize = 12,
 				TextTransparency = 0.10000000149012
 			})
@@ -749,7 +749,7 @@ do
 			Size = UDim2.new(1, 0, 0, 30),
 			ZIndex = 2,
 			Image = "rbxassetid://5028857472",
-			ImageColor3 = themes.DarkContrast,
+			ImageColor3 = _G.themes.DarkContrast,
 			ScaleType = Enum.ScaleType.Slice,
 			SliceCenter = Rect.new(2, 2, 298, 298)
 		},{
@@ -762,7 +762,7 @@ do
 				ZIndex = 3,
 				Font = Enum.Font.Gotham,
 				Text = title,
-				TextColor3 = themes.TextColor,
+				TextColor3 = _G.themes.TextColor,
 				TextSize = 12,
 				TextTransparency = 0.10000000149012,
 				TextXAlignment = Enum.TextXAlignment.Left
@@ -775,7 +775,7 @@ do
 				Size = UDim2.new(0, 40, 0, 16),
 				ZIndex = 2,
 				Image = "rbxassetid://5028857472",
-				ImageColor3 = themes.LightContrast,
+				ImageColor3 = _G.themes.LightContrast,
 				ScaleType = Enum.ScaleType.Slice,
 				SliceCenter = Rect.new(2, 2, 298, 298)
 			}, {
@@ -786,7 +786,7 @@ do
 					Size = UDim2.new(1, -22, 1, -4),
 					ZIndex = 2,
 					Image = "rbxassetid://5028857472",
-					ImageColor3 = themes.TextColor,
+					ImageColor3 = _G.themes.TextColor,
 					ScaleType = Enum.ScaleType.Slice,
 					SliceCenter = Rect.new(2, 2, 298, 298)
 				})
@@ -822,7 +822,7 @@ do
 			Size = UDim2.new(1, 0, 0, 30),
 			ZIndex = 2,
 			Image = "rbxassetid://5028857472",
-			ImageColor3 = themes.DarkContrast,
+			ImageColor3 = _G.themes.DarkContrast,
 			ScaleType = Enum.ScaleType.Slice,
 			SliceCenter = Rect.new(2, 2, 298, 298)
 		}, {
@@ -835,7 +835,7 @@ do
 				ZIndex = 3,
 				Font = Enum.Font.Gotham,
 				Text = title,
-				TextColor3 = themes.TextColor,
+				TextColor3 = _G.themes.TextColor,
 				TextSize = 12,
 				TextTransparency = 0.10000000149012,
 				TextXAlignment = Enum.TextXAlignment.Left
@@ -847,7 +847,7 @@ do
 				Size = UDim2.new(0, 100, 0, 16),
 				ZIndex = 2,
 				Image = "rbxassetid://5028857472",
-				ImageColor3 = themes.LightContrast,
+				ImageColor3 = _G.themes.LightContrast,
 				ScaleType = Enum.ScaleType.Slice,
 				SliceCenter = Rect.new(2, 2, 298, 298)
 			}, {
@@ -860,7 +860,7 @@ do
 					ZIndex = 3,
 					Font = Enum.Font.GothamSemibold,
 					Text = default or "",
-					TextColor3 = themes.TextColor,
+					TextColor3 = _G.themes.TextColor,
 					TextSize = 11
 				})
 			})
@@ -930,7 +930,7 @@ do
 			Size = UDim2.new(1, 0, 0, 30),
 			ZIndex = 2,
 			Image = "rbxassetid://5028857472",
-			ImageColor3 = themes.DarkContrast,
+			ImageColor3 = _G.themes.DarkContrast,
 			ScaleType = Enum.ScaleType.Slice,
 			SliceCenter = Rect.new(2, 2, 298, 298)
 		}, {
@@ -943,7 +943,7 @@ do
 				ZIndex = 3,
 				Font = Enum.Font.Gotham,
 				Text = title,
-				TextColor3 = themes.TextColor,
+				TextColor3 = _G.themes.TextColor,
 				TextSize = 12,
 				TextTransparency = 0.10000000149012,
 				TextXAlignment = Enum.TextXAlignment.Left
@@ -955,7 +955,7 @@ do
 				Size = UDim2.new(0, 100, 0, 16),
 				ZIndex = 2,
 				Image = "rbxassetid://5028857472",
-				ImageColor3 = themes.LightContrast,
+				ImageColor3 = _G.themes.LightContrast,
 				ScaleType = Enum.ScaleType.Slice,
 				SliceCenter = Rect.new(2, 2, 298, 298)
 			}, {
@@ -967,7 +967,7 @@ do
 					ZIndex = 3,
 					Font = Enum.Font.GothamSemibold,
 					Text = default and default.Name or "None",
-					TextColor3 = themes.TextColor,
+					TextColor3 = _G.themes.TextColor,
 					TextSize = 11
 				})
 			})
@@ -1035,7 +1035,7 @@ do
 			Size = UDim2.new(1, 0, 0, 30),
 			ZIndex = 2,
 			Image = "rbxassetid://5028857472",
-			ImageColor3 = themes.DarkContrast,
+			ImageColor3 = _G.themes.DarkContrast,
 			ScaleType = Enum.ScaleType.Slice,
 			SliceCenter = Rect.new(2, 2, 298, 298)
 		},{
@@ -1048,7 +1048,7 @@ do
 				ZIndex = 3,
 				Font = Enum.Font.Gotham,
 				Text = title,
-				TextColor3 = themes.TextColor,
+				TextColor3 = _G.themes.TextColor,
 				TextSize = 12,
 				TextTransparency = 0.10000000149012,
 				TextXAlignment = Enum.TextXAlignment.Left
@@ -1076,7 +1076,7 @@ do
 			AnchorPoint = Vector2.new(0.5, 0.5),
 			Size = UDim2.new(0, 162, 0, 169),
 			Image = "rbxassetid://5028857472",
-			ImageColor3 = themes.Background,
+			ImageColor3 = _G.themes.Background,
 			ScaleType = Enum.ScaleType.Slice,
 			SliceCenter = Rect.new(2, 2, 298, 298),
 			Visible = false,
@@ -1088,7 +1088,7 @@ do
 				Size = UDim2.new(1, 30, 1, 30),
 				ZIndex = 0,
 				Image = "rbxassetid://5028857084",
-				ImageColor3 = themes.Glow,
+				ImageColor3 = _G.themes.Glow,
 				ScaleType = Enum.ScaleType.Slice,
 				SliceCenter = Rect.new(22, 22, 278, 278)
 			}),
@@ -1100,7 +1100,7 @@ do
 				ZIndex = 2,
 				Font = Enum.Font.GothamSemibold,
 				Text = title,
-				TextColor3 = themes.TextColor,
+				TextColor3 = _G.themes.TextColor,
 				TextSize = 14,
 				TextXAlignment = Enum.TextXAlignment.Left
 			}),
@@ -1111,7 +1111,7 @@ do
 				Size = UDim2.new(0, 16, 0, 16),
 				ZIndex = 2,
 				Image = "rbxassetid://5012538583",
-				ImageColor3 = themes.TextColor
+				ImageColor3 = _G.themes.TextColor
 			}), 
 			utility:Create("Frame", {
 				Name = "Container",
@@ -1126,7 +1126,7 @@ do
 				utility:Create("ImageButton", {
 					Name = "Canvas",
 					BackgroundTransparency = 1,
-					BorderColor3 = themes.LightContrast,
+					BorderColor3 = _G.themes.LightContrast,
 					Size = UDim2.new(1, 0, 0, 60),
 					AutoButtonColor = false,
 					Image = "rbxassetid://5108535320",
@@ -1150,7 +1150,7 @@ do
 					}),
 					utility:Create("ImageLabel", {
 						Name = "Cursor",
-						BackgroundColor3 = themes.TextColor,
+						BackgroundColor3 = _G.themes.TextColor,
 						AnchorPoint = Vector2.new(0.5, 0.5),
 						BackgroundTransparency = 1.000,
 						Size = UDim2.new(0, 10, 0, 10),
@@ -1174,7 +1174,7 @@ do
 				}, {
 					utility:Create("Frame", {
 						Name = "Select",
-						BackgroundColor3 = themes.TextColor,
+						BackgroundColor3 = _G.themes.TextColor,
 						BorderSizePixel = 1,
 						Position = UDim2.new(1, 0, 0, 0),
 						Size = UDim2.new(0, 2, 1, 0),
@@ -1210,7 +1210,7 @@ do
 						Size = UDim2.new(0.305, 0, 1, 0),
 						ZIndex = 2,
 						Image = "rbxassetid://5028857472",
-						ImageColor3 = themes.DarkContrast,
+						ImageColor3 = _G.themes.DarkContrast,
 						ScaleType = Enum.ScaleType.Slice,
 						SliceCenter = Rect.new(2, 2, 298, 298)
 					}, {
@@ -1221,7 +1221,7 @@ do
 							ZIndex = 2,
 							Font = Enum.Font.Gotham,
 							Text = "R:",
-							TextColor3 = themes.TextColor,
+							TextColor3 = _G.themes.TextColor,
 							TextSize = 10.000
 						}),
 						utility:Create("TextBox", {
@@ -1231,9 +1231,9 @@ do
 							Size = UDim2.new(0.600000024, 0, 1, 0),
 							ZIndex = 2,
 							Font = Enum.Font.Gotham,
-							PlaceholderColor3 = themes.DarkContrast,
+							PlaceholderColor3 = _G.themes.DarkContrast,
 							Text = "255",
-							TextColor3 = themes.TextColor,
+							TextColor3 = _G.themes.TextColor,
 							TextSize = 10.000
 						})
 					}),
@@ -1244,7 +1244,7 @@ do
 						Size = UDim2.new(0.305, 0, 1, 0),
 						ZIndex = 2,
 						Image = "rbxassetid://5028857472",
-						ImageColor3 = themes.DarkContrast,
+						ImageColor3 = _G.themes.DarkContrast,
 						ScaleType = Enum.ScaleType.Slice,
 						SliceCenter = Rect.new(2, 2, 298, 298)
 					}, {
@@ -1255,7 +1255,7 @@ do
 							Size = UDim2.new(0.400000006, 0, 1, 0),
 							Font = Enum.Font.Gotham,
 							Text = "G:",
-							TextColor3 = themes.TextColor,
+							TextColor3 = _G.themes.TextColor,
 							TextSize = 10.000
 						}),
 						utility:Create("TextBox", {
@@ -1266,7 +1266,7 @@ do
 							ZIndex = 2,
 							Font = Enum.Font.Gotham,
 							Text = "255",
-							TextColor3 = themes.TextColor,
+							TextColor3 = _G.themes.TextColor,
 							TextSize = 10.000
 						})
 					}),
@@ -1277,7 +1277,7 @@ do
 						Size = UDim2.new(0.305, 0, 1, 0),
 						ZIndex = 2,
 						Image = "rbxassetid://5028857472",
-						ImageColor3 = themes.DarkContrast,
+						ImageColor3 = _G.themes.DarkContrast,
 						ScaleType = Enum.ScaleType.Slice,
 						SliceCenter = Rect.new(2, 2, 298, 298)
 					}, {
@@ -1288,7 +1288,7 @@ do
 							ZIndex = 2,
 							Font = Enum.Font.Gotham,
 							Text = "B:",
-							TextColor3 = themes.TextColor,
+							TextColor3 = _G.themes.TextColor,
 							TextSize = 10.000
 						}),
 						utility:Create("TextBox", {
@@ -1299,7 +1299,7 @@ do
 							ZIndex = 2,
 							Font = Enum.Font.Gotham,
 							Text = "255",
-							TextColor3 = themes.TextColor,
+							TextColor3 = _G.themes.TextColor,
 							TextSize = 10.000
 						})
 					}),
@@ -1311,7 +1311,7 @@ do
 					Size = UDim2.new(1, 0, 0, 20),
 					ZIndex = 2,
 					Image = "rbxassetid://5028857472",
-					ImageColor3 = themes.DarkContrast,
+					ImageColor3 = _G.themes.DarkContrast,
 					ScaleType = Enum.ScaleType.Slice,
 					SliceCenter = Rect.new(2, 2, 298, 298)
 				}, {
@@ -1322,7 +1322,7 @@ do
 						ZIndex = 3,
 						Font = Enum.Font.Gotham,
 						Text = "Submit",
-						TextColor3 = themes.TextColor,
+						TextColor3 = _G.themes.TextColor,
 						TextSize = 11.000
 					})
 				})
@@ -1560,7 +1560,7 @@ do
 			Size = UDim2.new(1, 0, 0, 50),
 			ZIndex = 2,
 			Image = "rbxassetid://5028857472",
-			ImageColor3 = themes.DarkContrast,
+			ImageColor3 = _G.themes.DarkContrast,
 			ScaleType = Enum.ScaleType.Slice,
 			SliceCenter = Rect.new(2, 2, 298, 298)
 		}, {
@@ -1572,7 +1572,7 @@ do
 				ZIndex = 3,
 				Font = Enum.Font.Gotham,
 				Text = title,
-				TextColor3 = themes.TextColor,
+				TextColor3 = _G.themes.TextColor,
 				TextSize = 12,
 				TextTransparency = 0.10000000149012,
 				TextXAlignment = Enum.TextXAlignment.Left
@@ -1586,7 +1586,7 @@ do
 				ZIndex = 3,
 				Font = Enum.Font.GothamSemibold,
 				Text = default or min,
-				TextColor3 = themes.TextColor,
+				TextColor3 = _G.themes.TextColor,
 				TextSize = 12,
 				TextXAlignment = Enum.TextXAlignment.Right
 			}),
@@ -1606,7 +1606,7 @@ do
 					Size = UDim2.new(1, 0, 0, 4),
 					ZIndex = 3,
 					Image = "rbxassetid://5028857472",
-					ImageColor3 = themes.LightContrast,
+					ImageColor3 = _G.themes.LightContrast,
 					ScaleType = Enum.ScaleType.Slice,
 					SliceCenter = Rect.new(2, 2, 298, 298)
 				}, {
@@ -1616,7 +1616,7 @@ do
 						Size = UDim2.new(0.8, 0, 1, 0),
 						ZIndex = 3,
 						Image = "rbxassetid://5028857472",
-						ImageColor3 = themes.TextColor,
+						ImageColor3 = _G.themes.TextColor,
 						ScaleType = Enum.ScaleType.Slice,
 						SliceCenter = Rect.new(2, 2, 298, 298)
 					}, {
@@ -1625,7 +1625,7 @@ do
 							AnchorPoint = Vector2.new(0.5, 0.5),
 							BackgroundTransparency = 1,
 							ImageTransparency = 1.000,
-							ImageColor3 = themes.TextColor,
+							ImageColor3 = _G.themes.TextColor,
 							Position = UDim2.new(1, 0, 0.5, 0),
 							Size = UDim2.new(0, 10, 0, 10),
 							ZIndex = 3,
@@ -1720,7 +1720,7 @@ do
 				Size = UDim2.new(1, 0, 0, 30),
 				ZIndex = 2,
 				Image = "rbxassetid://5028857472",
-				ImageColor3 = themes.DarkContrast,
+				ImageColor3 = _G.themes.DarkContrast,
 				ScaleType = Enum.ScaleType.Slice,
 				SliceCenter = Rect.new(2, 2, 298, 298)
 			}, {
@@ -1734,7 +1734,7 @@ do
 					ZIndex = 3,
 					Font = Enum.Font.Gotham,
 					Text = title,
-					TextColor3 = themes.TextColor,
+					TextColor3 = _G.themes.TextColor,
 					TextSize = 12,
 					TextTransparency = 0.10000000149012,
 					TextXAlignment = Enum.TextXAlignment.Left
@@ -1747,7 +1747,7 @@ do
 					Size = UDim2.new(0, 18, 0, 18),
 					ZIndex = 3,
 					Image = "rbxassetid://5012539403",
-					ImageColor3 = themes.TextColor,
+					ImageColor3 = _G.themes.TextColor,
 					SliceCenter = Rect.new(2, 2, 298, 298)
 				})
 			}),
@@ -1758,7 +1758,7 @@ do
 				Size = UDim2.new(1, 0, 1, -34),
 				ZIndex = 2,
 				Image = "rbxassetid://5028857472",
-				ImageColor3 = themes.Background,
+				ImageColor3 = _G.themes.Background,
 				ScaleType = Enum.ScaleType.Slice,
 				SliceCenter = Rect.new(2, 2, 298, 298)
 			}, {
@@ -1773,7 +1773,7 @@ do
 					CanvasSize = UDim2.new(0, 0, 0, 120),
 					ZIndex = 2,
 					ScrollBarThickness = 3,
-					ScrollBarImageColor3 = themes.DarkContrast
+					ScrollBarImageColor3 = _G.themes.DarkContrast
 				}, {
 					utility:Create("UIListLayout", {
 						SortOrder = Enum.SortOrder.LayoutOrder,
@@ -2135,7 +2135,7 @@ do
 				Size = UDim2.new(1, 0, 0, 30),
 				ZIndex = 2,
 				Image = "rbxassetid://5028857472",
-				ImageColor3 = themes.DarkContrast,
+				ImageColor3 = _G.themes.DarkContrast,
 				ScaleType = Enum.ScaleType.Slice,
 				SliceCenter = Rect.new(2, 2, 298, 298)
 			}, {
@@ -2146,7 +2146,7 @@ do
 					ZIndex = 3,
 					Font = Enum.Font.Gotham,
 					Text = value,
-					TextColor3 = themes.TextColor,
+					TextColor3 = _G.themes.TextColor,
 					TextSize = 12,
 					TextXAlignment = "Left",
 					TextTransparency = 0.10000000149012
