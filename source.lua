@@ -51,7 +51,7 @@ if hwid == Owner_HWID and _G.CustomDuelsInterface == false and _G.OriginalUIForO
             DarkContrast = Color3.fromRGB(230, 230, 230),  
            TextColor = Color3.fromRGB(0, 0, 0)
     } -- [Frost UI]
-elseif _G.CustomDuelsInterface == true then
+elseif hwid == Owner_HWID and _G.CustomDuelsInterface == true then
     _G.themes = {
             Background = Color3.fromRGB(18, 21, 24),
             Glow = Color3.fromRGB(1, 1, 1),
