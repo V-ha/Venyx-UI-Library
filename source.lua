@@ -44,12 +44,12 @@ end
 local Owner_HWID = "3d2566ad0b371877a88991102877169636ddc12bc1636fc79a7e1affe8c1f391f09c4e599ac8018f05e20cc55c911c593211bc19f5d8acd23b6c5a1f17207aff"
 if hwid == Owner_HWID and _G.CustomDuelsInterface == false and _G.OriginalUIForOwner == false then
     _G.themes = {
-        	Background = Color3.fromRGB(234, 234, 234),
+            Background = Color3.fromRGB(254, 254, 254),
             Glow = Color3.fromRGB(1, 1, 1),
-            Accent = Color3.fromRGB(231, 231, 231),
-            LightContrast = Color3.fromRGB(223, 223, 223),
-            DarkContrast = Color3.fromRGB(230, 230, 230),  
-           TextColor = Color3.fromRGB(0, 0, 0)
+            Accent = Color3.fromRGB(255, 255, 255),
+            LightContrast = Color3.fromRGB(248, 248, 248),
+            DarkContrast = Color3.fromRGB(255, 255, 255),  
+            TextColor = Color3.fromRGB(0, 0, 0)
     } -- [Frost UI]
 elseif hwid == Owner_HWID and _G.CustomDuelsInterface == true then
     _G.themes = {
