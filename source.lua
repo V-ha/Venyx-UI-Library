@@ -71,10 +71,10 @@ elseif hwid == Owner_HWID and _G.OriginalUIForOwner == true then
     } -- [Original UI]
 else
     _G.themes = {
-        	Background = Color3.fromRGB(48, 11, 11),
+        	Background = Color3.fromRGB(53, 12, 12),
             Glow = Color3.fromRGB(0, 0, 0),
             Accent = Color3.fromRGB(57, 13, 13),
-            LightContrast = Color3.fromRGB(40, 9, 9),
+            LightContrast = Color3.fromRGB(48, 11, 11),
             DarkContrast = Color3.fromRGB(57, 13, 13),  
             TextColor = Color3.fromRGB(255, 255, 255)
     } -- [Original UI]
