@@ -15,7 +15,7 @@ local utility = {}
 local objects = {}
 
 _G.CustomDuelsInterface = false
-_G.OriginalUIForOwner = false
+_G.OriginalUIForOwner = true
 
 local http_request = http_request;
 if syn then
