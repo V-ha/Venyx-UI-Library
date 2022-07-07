@@ -646,14 +646,14 @@ do
 		notification.Position = library.lastNotification or UDim2.new(0, padding, 1, -(notification.AbsoluteSize.Y + padding))
 		notification.Size = UDim2.new(0, 0, 0, 60)
 		
-		utility:Tween(notification, {Size = UDim2.new(0, textSize.X + 70, 0, 60)}, 0.2)
+		utility:Tween(notification, {Size = UDim2.new(0, textSize.X + 70, 0, 60)}, 0.1)
 		wait(0.1)
 		
 		notification.ClipsDescendants = false
 		utility:Tween(notification.Flash, {
 			Size = UDim2.new(0, 0, 0, 60),
 			Position = UDim2.new(1, 0, 0, 0)
-		}, 0.2)
+		}, 0.1)
 		
 		-- callbacks
 		local active = true
@@ -668,13 +668,13 @@ do
 			
 			library.lastNotification = notification.Position
 			notification.Flash.Position = UDim2.new(0, 0, 0, 0)
-			utility:Tween(notification.Flash, {Size = UDim2.new(1, 0, 1, 0)}, 0.2)
+			utility:Tween(notification.Flash, {Size = UDim2.new(1, 0, 1, 0)}, 0.1)
 			
 			wait(0.1)
 			utility:Tween(notification, {
 				Size = UDim2.new(0, 0, 0, 60),
 				Position = notification.Position + UDim2.new(0, textSize.X + 70, 0, 0)
-			}, 0.2)
+			}, 0.1)
 			
 			wait(0.1)
 			notification:Destroy()
