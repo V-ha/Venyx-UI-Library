@@ -1809,7 +1809,7 @@ do
 			if search.Button.Rotation == 0 then
 				self:updateDropdown(dropdown, nil, list, callback)
 			else
-				self:updateDropdown(dropdown, nil, nil, callback)
+				self:updateDropdown(dropdown, nil, nil)
 			end
 		end)
 		
@@ -2158,10 +2158,10 @@ do
 					Position = UDim2.new(0, 10, 0, 0),
 					Size = UDim2.new(1, -10, 1, 0),
 					ZIndex = 3,
-					Font = Enum.Font.Gotham,
+					Font = Enum.Font.GothamBlack,
 					Text = value,
 					TextColor3 = _G.themes.TextColor,
-					TextSize = 12,
+					TextSize = 10,
 					TextXAlignment = "Left",
 					TextTransparency = 0.10000000149012
 				})
