@@ -2168,12 +2168,13 @@ do
 			})
 			
 			button.MouseButton1Click:Connect(function()
+				local callback = function(value)
 				if callback then
 					callback(value, function(...)
 						self:updateDropdown(dropdown, ...)
 					end)	
 				end
-
+				end
 				self:updateDropdown(dropdown, value, nil, callback)
 			end)
 			
