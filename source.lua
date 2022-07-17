@@ -1809,7 +1809,7 @@ do
 			if search.Button.Rotation == 0 then
 				self:updateDropdown(dropdown, nil, list, callback)
 			else
-				self:updateDropdown(dropdown, nil, nil)
+				self:updateDropdown(dropdown, nil, nil, callback)
 			end
 		end)
 		
