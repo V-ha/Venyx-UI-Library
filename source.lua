@@ -2131,7 +2131,7 @@ do
 		return value
 	end
 	
-	function section:updateDropdown(dropdown, title, list, callback)
+	function section:updateDropdown(dropdown, title, list)
 		dropdown = self:getModule(dropdown)
 		
 		if title then
@@ -2175,7 +2175,7 @@ do
 			})
 			
 			button.MouseButton1Click:Connect(function()
-				self:updateDropdown(dropdown, value, nil, callback)
+				self:updateDropdown(dropdown, value, nil)
 			end)
 			
 			entries = entries + 1
@@ -2186,20 +2186,8 @@ do
 		utility:Tween(dropdown, {Size = UDim2.new(1, 0, 0, (entries == 0 and 30) or math.clamp(entries, 0, 3) * 34 + 38)}, 0.3)
 		utility:Tween(dropdown.Search.Button, {Rotation = list and 180 or 0}, 0.3)
 		
-		if entries > 3 then
-		
-			for i, button in pairs(dropdown.List.Frame:GetChildren()) do
-				if button:IsA("ImageButton") then
-					button.Size = UDim2.new(1, -6, 0, 30)
-				end
-			end
-			
-			frame.CanvasSize = UDim2.new(0, 0, 0, (entries * 34) - 4)
-			frame.ScrollBarImageTransparency = 0
-		else
-			frame.CanvasSize = UDim2.new(0, 0, 0, 0)
-			frame.ScrollBarImageTransparency = 1
-		end
+		frame.CanvasSize = UDim2.new(0, 0, 0, 0)
+		frame.ScrollBarImageTransparency = 1
 	end
 end
 
