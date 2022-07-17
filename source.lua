@@ -2158,23 +2158,22 @@ do
 					Position = UDim2.new(0, 10, 0, 0),
 					Size = UDim2.new(1, -10, 1, 0),
 					ZIndex = 3,
-					Font = Enum.Font.GothamBlack,
+					Font = Enum.Font.Gotham,
 					Text = value,
 					TextColor3 = _G.themes.TextColor,
-					TextSize = 10,
+					TextSize = 12,
 					TextXAlignment = "Left",
 					TextTransparency = 0.10000000149012
 				})
 			})
 			
 			button.MouseButton1Click:Connect(function()
-				local callback = function(value)
-				if callback then
-					callback(value, function(...)
-						self:updateDropdown(dropdown, ...)
-					end)	
-				end
-				end
+    			if callback then
+    				callback(value, function(...)
+    					self:updateDropdown(dropdown, ...)
+    				end)	
+    			end
+    			
 				self:updateDropdown(dropdown, value, nil, callback)
 			end)
 			
