@@ -2131,7 +2131,7 @@ do
 		return value
 	end
 	
-	function section:updateDropdown(dropdown, title, list)
+	function section:updateDropdown(dropdown, title, list, callback)
 		dropdown = self:getModule(dropdown)
 		
 		if title then
