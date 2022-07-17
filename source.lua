@@ -614,7 +614,7 @@ do
 				Position = UDim2.new(0, 10, 1, -24),
 				Size = UDim2.new(1, -40, 0, 16),
 				ZIndex = 4,
-				Font = Enum.Font.Gotham,
+				Font = Enum.Font.Code,
 				TextColor3 = _G.themes.TextColor,
 				TextSize = 12.000,
 				TextXAlignment = Enum.TextXAlignment.Left
@@ -641,7 +641,7 @@ do
 		notification.Text.Text = text
 		
 		local padding = 10
-		local textSize = game:GetService("TextService"):GetTextSize(text, 12, Enum.Font.Gotham, Vector2.new(math.huge, 16))
+		local textSize = game:GetService("TextService"):GetTextSize(text, 12, Enum.Font.Code, Vector2.new(math.huge, 16))
 		
 		notification.Position = library.lastNotification or UDim2.new(0, padding, 1, -(notification.AbsoluteSize.Y + padding))
 		notification.Size = UDim2.new(0, 0, 0, 60)
@@ -712,7 +712,7 @@ do
 				BackgroundTransparency = 1,
 				Size = UDim2.new(1, 0, 1, 0),
 				ZIndex = 3,
-				Font = Enum.Font.Gotham,
+				Font = Enum.Font.Code,
 				Text = title,
 				TextColor3 = _G.themes.TextColor,
 				TextSize = 12,
@@ -774,7 +774,7 @@ do
 				Position = UDim2.new(0, 10, 0.5, 1),
 				Size = UDim2.new(0.5, 0, 1, 0),
 				ZIndex = 3,
-				Font = Enum.Font.Gotham,
+				Font = Enum.Font.Code,
 				Text = title,
 				TextColor3 = _G.themes.TextColor,
 				TextSize = 12,
@@ -847,7 +847,7 @@ do
 				Position = UDim2.new(0, 10, 0.5, 1),
 				Size = UDim2.new(0.5, 0, 1, 0),
 				ZIndex = 3,
-				Font = Enum.Font.Gotham,
+				Font = Enum.Font.Code,
 				Text = title,
 				TextColor3 = _G.themes.TextColor,
 				TextSize = 12,
@@ -955,7 +955,7 @@ do
 				Position = UDim2.new(0, 10, 0.5, 1),
 				Size = UDim2.new(1, 0, 1, 0),
 				ZIndex = 3,
-				Font = Enum.Font.Gotham,
+				Font = Enum.Font.Code,
 				Text = title,
 				TextColor3 = _G.themes.TextColor,
 				TextSize = 12,
@@ -1060,7 +1060,7 @@ do
 				Position = UDim2.new(0, 10, 0.5, 1),
 				Size = UDim2.new(0.5, 0, 1, 0),
 				ZIndex = 3,
-				Font = Enum.Font.Gotham,
+				Font = Enum.Font.Code,
 				Text = title,
 				TextColor3 = _G.themes.TextColor,
 				TextSize = 12,
@@ -1233,7 +1233,7 @@ do
 							BackgroundTransparency = 1,
 							Size = UDim2.new(0.400000006, 0, 1, 0),
 							ZIndex = 2,
-							Font = Enum.Font.Gotham,
+							Font = Enum.Font.Code,
 							Text = "R:",
 							TextColor3 = _G.themes.TextColor,
 							TextSize = 10.000
@@ -1244,7 +1244,7 @@ do
 							Position = UDim2.new(0.300000012, 0, 0, 0),
 							Size = UDim2.new(0.600000024, 0, 1, 0),
 							ZIndex = 2,
-							Font = Enum.Font.Gotham,
+							Font = Enum.Font.Code,
 							PlaceholderColor3 = _G.themes.DarkContrast,
 							Text = "255",
 							TextColor3 = _G.themes.TextColor,
@@ -1267,7 +1267,7 @@ do
 							BackgroundTransparency = 1,
 							ZIndex = 2,
 							Size = UDim2.new(0.400000006, 0, 1, 0),
-							Font = Enum.Font.Gotham,
+							Font = Enum.Font.Code,
 							Text = "G:",
 							TextColor3 = _G.themes.TextColor,
 							TextSize = 10.000
@@ -1278,7 +1278,7 @@ do
 							Position = UDim2.new(0.300000012, 0, 0, 0),
 							Size = UDim2.new(0.600000024, 0, 1, 0),
 							ZIndex = 2,
-							Font = Enum.Font.Gotham,
+							Font = Enum.Font.Code,
 							Text = "255",
 							TextColor3 = _G.themes.TextColor,
 							TextSize = 10.000
@@ -1300,7 +1300,7 @@ do
 							BackgroundTransparency = 1,
 							Size = UDim2.new(0.400000006, 0, 1, 0),
 							ZIndex = 2,
-							Font = Enum.Font.Gotham,
+							Font = Enum.Font.Code,
 							Text = "B:",
 							TextColor3 = _G.themes.TextColor,
 							TextSize = 10.000
@@ -1311,7 +1311,7 @@ do
 							Position = UDim2.new(0.300000012, 0, 0, 0),
 							Size = UDim2.new(0.600000024, 0, 1, 0),
 							ZIndex = 2,
-							Font = Enum.Font.Gotham,
+							Font = Enum.Font.Code,
 							Text = "255",
 							TextColor3 = _G.themes.TextColor,
 							TextSize = 10.000
@@ -1334,7 +1334,7 @@ do
 						BackgroundTransparency = 1,
 						Size = UDim2.new(1, 0, 1, 0),
 						ZIndex = 3,
-						Font = Enum.Font.Gotham,
+						Font = Enum.Font.Code,
 						Text = "Submit",
 						TextColor3 = _G.themes.TextColor,
 						TextSize = 11.000
@@ -1584,7 +1584,7 @@ do
 				Position = UDim2.new(0, 10, 0, 6),
 				Size = UDim2.new(0.5, 0, 0, 16),
 				ZIndex = 3,
-				Font = Enum.Font.Gotham,
+				Font = Enum.Font.Code,
 				Text = title,
 				TextColor3 = _G.themes.TextColor,
 				TextSize = 12,
