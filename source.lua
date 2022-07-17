@@ -1799,6 +1799,13 @@ do
 		
 		table.insert(self.modules, dropdown)
 		--self:Resize()
+		local callback = function(value)
+        	if callback then
+        		callback(value, function(...)
+        			self:updateDropdown(dropdown, ...)
+        		end)	
+        	end
+    	end
 		
 		local search = dropdown.Search
 		local focused
@@ -2168,12 +2175,6 @@ do
 			})
 			
 			button.MouseButton1Click:Connect(function()
-    			if callback then
-    				callback(value, function(...)
-    					self:updateDropdown(dropdown, ...)
-    				end)	
-    			end
-    			
 				self:updateDropdown(dropdown, value, nil, callback)
 			end)
 			
