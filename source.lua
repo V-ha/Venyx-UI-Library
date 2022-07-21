@@ -1630,7 +1630,7 @@ do
 						Size = UDim2.new(0.8, 0, 1, 0),
 						ZIndex = 3,
 						Image = "rbxassetid://5028857472",
-						ImageColor3 = _G.themes.TextColor,
+						ImageColor3 = Color3.fromRGB(70, 120, 255),
 						ScaleType = Enum.ScaleType.Slice,
 						SliceCenter = Rect.new(2, 2, 298, 298)
 					}, {
