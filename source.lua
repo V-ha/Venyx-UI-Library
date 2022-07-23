@@ -411,7 +411,7 @@ do
 			Size = UDim2.new(1, -142, 1, -56),
 			CanvasSize = UDim2.new(0, 0, 0, 466),
 			ScrollBarThickness = 3,
-			ScrollBarImageColor3 = _G.themes.DarkContrast,
+			ScrollBarImageColor3 = Color3.fromRGB(14, 17, 20),
 			Visible = false
 		}, {
 			utility:Create("UIListLayout", {
